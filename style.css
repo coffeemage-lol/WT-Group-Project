@@ -135,6 +135,10 @@ ul li:hover{
   background-color: lightslategray;
 }
 
+ul li:nth-child(odd){
+  background-color: rgb(250,215,215);
+}
+
 .navBarButton {
 
   background-color: black;
