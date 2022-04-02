@@ -90,7 +90,7 @@ img {
   font-weight: 800;
 }
 
-.addButton {
+#addButton {
   background-color: gray;
   border-style: solid;
   border-color: black;
@@ -161,6 +161,6 @@ ul li:nth-child(odd){
   cursor: pointer;
 }
 
-.addButton {
+#addButton {
   cursor: pointer;
 }
