@@ -1,47 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" href="style.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="script.js"></script>
+  <title>To Do List</title>
 </head>
+
 <body>
-  <div id="start" class="start">
+  <div id="start" class="start">    <!--Top navigation bar, links to home and creators-->
     <img src="icon-clipboard-512.webp" style="justify-content: left; display: inline;">
-    
-      <h1 style="display: inline;">HOME</h1>
-      <h1 style="display: inline;">HOME2</h1>
-    
-    
+    <button class="navBarButton" onclick="window.location.href='home.html'">HOME</button>
+    <button class="navBarButton" onclick="window.location.href='creators.html'">CREATORS</button>
+  </div>  
+
+  <div id="TitleBar">
+    <h2>Make a To-Do List</h2>
+  </div>
+
+  <div id="inputBar">
+    <h3>Organize your day.</h3>
   </div>
 
 
-    <div id="myDIV" class="header">
-        <h2>My To Do List</h2>
-        <input type="text" id="myInput" placeholder="Title...">
-        <span onclick="newElement()" class="addBtn">Add</span>
-      </div>
-      
-      <ul id="myUL">
-        <li>Hit the gym</li>
-        <li class="checked">Pay bills</li>
-        <li>Meet George</li>
-        <li>Buy eggs</li>
-        <li>Read a book</li>
-        <li>Organize office</li>
-        <li>Lorem, ipsum..</li>
-        <li>Lorem, ipsum..</li>
-        <li>Lorem, ipsum..</li>
-        <li>Lorem, ipsum..</li>
-        <li>Lorem, ipsum..</li>
-      </ul>
+  <input type="text" class="inputText" placeholder="Add your Task.....">
 
-      <div class="foot">
-        <h2>Hello</h2>
-      </div>
-    
+  <!--<span onclick="newElement()" class="addButton">Add Task</span> -->
+
+  <button class="addButton"> Add Task!</button>
+  
+  <ul id="myUL">
+    <li>Finish Assignment.</li>
+    <li>Go to the gym.</li>
+    <li>Order a lamp.</li>   
+    <li>Go on the date.</li>
+    <li>Buy milk and eggs.</li>
+  </ul> 
+
+
+
+  <div class="foot">
+    <h2>Created by Shivam, Shashank, Aman, Yuvraj and Kumar</h2>
+  </div>
+
 </body>
-</html>
 
+</html>
