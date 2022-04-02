@@ -1,58 +1,42 @@
-/*
+document.addEventListener('DOMContentLoaded', function() {
 
-// Create a "close" button and append it to each list item
-var myNodelist = document.getElementsByTagName("LI");
-var i;
-for (i = 0; i < myNodelist.length; i++) {
-  var span = document.createElement("SPAN");
-  var txt = document.createTextNode("\u00D7");
-  span.className = "close";
-  span.appendChild(txt);
-  myNodelist[i].appendChild(span);
-}
+  // Select the submit button and input to be used later
+  const submit = document.querySelector('#addButton');
+  const newTask = document.querySelector('.inputText');
 
-// Click on a close button to hide the current list item
-var close = document.getElementsByClassName("close");
-var i;
-for (i = 0; i < close.length; i++) {
-  close[i].onclick = function() {
-    var div = this.parentElement;
-    div.style.display = "none";
+  // Disable submit button by default:
+  submit.disabled = true;
+
+  // Listen for input to be typed into the input field
+  newTask.onkeyup = () => {
+      if (newTask.value.length > 0) {
+          submit.disabled = false;
+      }
+      else {
+          submit.disabled = true;
+      }
   }
-}
 
-// Add a "checked" symbol when clicking on a list item
-var list = document.querySelector('ul');
-list.addEventListener('click', function(ev) {
-  if (ev.target.tagName === 'LI') {
-    ev.target.classList.toggle('checked');
+  // Listen for submission of form
+  document.querySelector('form').onsubmit = () => {
+
+      // Find the task the user just submitted
+      const task = newTask.value;
+
+      // Create a list item for the new task and add the task to it
+      const li = document.createElement('li');
+      li.innerHTML = task;
+
+      // Add new element to our unordered list:
+      document.querySelector('#myUL').append(li);
+
+      // Clear out input field:
+      newTask.value = '';
+
+      // Disable the submit button again:
+      submit.disabled = true;
+
+      // Stop form from submitting
+      return false;
   }
-}, false);
-
-// Create a new list item when clicking on the "Add" button
-function newElement() {
-  var li = document.createElement("li");
-  var inputValue = document.getElementById("myInput").value;
-  var t = document.createTextNode(inputValue);
-  li.appendChild(t);
-  if (inputValue === '') {
-    alert("You must write something!");
-  } else {
-    document.getElementById("myUL").appendChild(li);
-  }
-  document.getElementById("myInput").value = "";
-
-  var span = document.createElement("SPAN");
-  var txt = document.createTextNode("\u00D7");
-  span.className = "close";
-  span.appendChild(txt);
-  li.appendChild(span);
-
-  for (i = 0; i < close.length; i++) {
-    close[i].onclick = function() {
-      var div = this.parentElement;
-      div.style.display = "none";
-    }
-  }
-} */
-
+});
