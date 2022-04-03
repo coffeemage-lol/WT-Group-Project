@@ -37,6 +37,14 @@ document.addEventListener('DOMContentLoaded', function() {
       submit.disabled = true;
 
       // Stop form from submitting
-      return false;
+      return false; }
+
+      var list = document.querySelector('ul');
+list.addEventListener('click', function(ev) {
+  if (ev.target.tagName === 'LI') {
+    ev.target.classList.toggle('checked');
   }
-});
+}, false);
+
+  }
+);
